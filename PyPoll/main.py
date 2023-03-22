@@ -1,6 +1,6 @@
 import os
 import csv
-#store number of votesca and candidates 
+#store number of votes and candidates 
 votes = []
 candidates = []
 unique_candidates = []
@@ -34,12 +34,11 @@ with open(poll_csv) as csvfile:
            doane = doane+1
 #zip lists to find the MAX value of votes and the winner
 Winner = zip([stockham,deGette,doane],unique_candidates,)
-
 #calculate percentage of votes for each candidate
 stockham_percent= ("{:.3%}".format(stockham/len(votes)))
 deGette_percent = ("{:.3%}".format(deGette/len(votes)))
 doane_percent = ("{:.3%}".format(doane/len(votes)))
-#print
+#print values
 print(f"Total Votes: {len(votes)}")
 print(f"Charles Casper Stockham: {stockham_percent} ({stockham})")
 print(f"Diana DeGette: {deGette_percent} ({deGette})")
