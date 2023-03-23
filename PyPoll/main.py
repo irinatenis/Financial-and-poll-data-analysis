@@ -38,9 +38,23 @@ Winner = zip([stockham,deGette,doane],unique_candidates,)
 stockham_percent= ("{:.3%}".format(stockham/len(votes)))
 deGette_percent = ("{:.3%}".format(deGette/len(votes)))
 doane_percent = ("{:.3%}".format(doane/len(votes)))
+max_winner = max(Winner)[1]
 #print values
 print(f"Total Votes: {len(votes)}")
 print(f"Charles Casper Stockham: {stockham_percent} ({stockham})")
 print(f"Diana DeGette: {deGette_percent} ({deGette})")
 print (f"Raymon Anthony Doane: {doane_percent } ({doane})")
-print(f"Winner: {max(Winner)[1]}")
+print(f"Winner: {max_winner}")
+
+#WRITE A TEXT FILE WITH RESULTS
+output_path=os.path.join("PyPoll","Analysis", "Results.csv")
+with open(output_path, "w") as csvfile:
+ csvfile.write(f"Election Results\n\
+-------------------------------------\n\
+Total Votes: {len(votes)}\n\
+-------------------------------------\n\
+Charles Casper Stockham: {stockham_percent} ({stockham})\n\
+Diana DeGette: {deGette_percent} ({deGette})\n\
+Raymon Anthony Doane: {doane_percent } ({doane})\n\
+-------------------------------------\n\
+Winner: {max_winner}")

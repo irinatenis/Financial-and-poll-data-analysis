@@ -1,4 +1,4 @@
-#1.Total number of months included in the dataset
+#import dependencies
 import os
 import csv
 #store number of months
@@ -57,7 +57,7 @@ for i in change:
        highest_profit_date = i[0]
     if i[1]== highest_loss:
        highest_loss_date = i[0]
-#PRINT ALL OUTCOME
+#FINALIZE AND PRINT RESULTS
 #print total number of months
 print(f"Total Months: {total_months}")
 #sum and print the values for net total net amount
@@ -72,5 +72,17 @@ print(f"Average Change: ${averageChange}")
 print(f"Greatest Increase in Profits: {highest_profit_date} (${highest_profit})")
 print(f"Greatest Decrease in Profits: {highest_loss_date} (${highest_loss})")
 
+#WRITE A TEXT FILE WITH RESULTS
+output_path=os.path.join("PyBank","Analysis", "Results.csv")
+with open(output_path, "w") as csvfile:
+ csvfile.write(f"Finacial Analysis\n\
+-------------------------------------\n\
+Total Months: {total_months}\n\
+Total: ${net_total_amount}\n\
+Average Change: ${averageChange}\n\
+Greatest Increase in Profits: {highest_profit_date} (${highest_profit})\n\
+Greatest Decrease in Profits: {highest_loss_date} (${highest_loss})")
+
+               
 
          
