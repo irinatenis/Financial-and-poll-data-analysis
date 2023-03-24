@@ -1,6 +1,6 @@
 # python-challenge
 ### Week 3 Challenge  
-Analysed 2 sets of data: financial data for a banl and election data.
+Analysed 2 sets of data: financial data for a bank and election data.
 #### Technology
 Python
 #### Tasks completed:
